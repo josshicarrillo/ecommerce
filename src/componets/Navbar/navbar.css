@@ -4,8 +4,12 @@
   
 }
 .navbar ul {
+    font-family: system-ui;
     display: flex;
     list-style: none;
     gap: 20px;
-    margin-left: 20px;
+    margin: 20px;
+    font-weight: bold;
+    font-size: 18px;
+   
 }
