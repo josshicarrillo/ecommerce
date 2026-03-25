@@ -23,7 +23,7 @@ const Counter = () => {
    }, [contador])
 
    // se ejecuta en el montaje y cada vez que cualquier estado del componente cambie
-
+   // ejem: operaciones globales de monitoreo o registro, actualizaciones generales de componente
    useEffect(() => {
       console.log("usseEffect sin array de dependencias")
    })
