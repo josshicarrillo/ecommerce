@@ -1,0 +1,16 @@
+.item-list-container {
+    width: 100%;
+    padding: 40px 30px;
+    background-color: #0f0f0f4c;
+}
+
+.container-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #0066cc;
+    padding-bottom: 15px;
+}

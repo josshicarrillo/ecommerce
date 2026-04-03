@@ -1,0 +1,31 @@
+.cartwidget {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 20px;
+    color: #f2f6ff;
+    line-height: 1;
+}
+
+.cartwidget p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartwidget p:first-child {
+    font-size: 24px;
+}
+
+.cartwidget p:last-child {
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: #0066cc;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+}

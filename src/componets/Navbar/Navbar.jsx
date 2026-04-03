@@ -2,6 +2,7 @@ import "./navbar.css"
 import CartWidget from "../CartWidget/CartWidget"
 import logo from "../../assets/img/logo2.jpg"
 
+
 const Navbar = () => {
   return (
       <nav className="navbar">
