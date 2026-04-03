@@ -8,15 +8,14 @@ const ItemListContainer = ({ saludo }) => {
   const [loading, setLoading] = useState(true)
   
   
-useEffect(() => {
+ useEffect(() => {
     getProducts()
       .then((data) => {
         setProducts(data)
+        })
 
-      })
-
-    .catch((error) => { console.log(error) }) 
-     
+        .catch((error) => { console.log(error) }) 
+        
   }, [])
 
 
