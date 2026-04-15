@@ -1,5 +1,5 @@
 import "./titulo.css"
-import logo from "../assets/img/logo2.jpg"
+
 
 const Titulo = () => {
     const title  = "Bienvenidos a Helen Collection"

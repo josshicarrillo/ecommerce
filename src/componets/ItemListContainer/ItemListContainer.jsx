@@ -18,7 +18,6 @@ const ItemListContainer = ({ saludo }) => {
         
   }, [])
 
-
   return (
     <div className="item-list-container">
       <h2 className="container-title">{saludo}</h2>
