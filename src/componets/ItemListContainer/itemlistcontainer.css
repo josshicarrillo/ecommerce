@@ -1,7 +1,10 @@
 .item-list-container {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 40px 30px;
-    background-color: #0f0f0f4c;
+    background-color: rgba(15, 15, 15, 0.3);
+    border-radius: 20px;
 }
 
 .container-title {
@@ -13,4 +16,5 @@
     letter-spacing: 1px;
     border-bottom: 3px solid #0066cc;
     padding-bottom: 15px;
+    text-align: center;
 }

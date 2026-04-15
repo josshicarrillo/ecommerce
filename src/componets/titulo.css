@@ -1,10 +1,11 @@
-.titulo{
-  color: aqua;
+.titulo {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 20px;
 }
 
-.titulo img{
-    width: 100%;
-    height: 150px;
-    margin-top: 5px;
-    object-fit: cover;
+.titulo img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
 }
