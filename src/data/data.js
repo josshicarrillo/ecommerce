@@ -1,38 +1,182 @@
 const products = [
+    // CATEGORÍA: MUJER
     {
         id: 1,
-        name: "Vestido 1",
+        name: "Vestido Elegante",
         description: "Vestido elegante para ocasiones especiales",
         stock: 15,
-        price: 10,
-        image:"/img/MODELO-1.jpg"
+        price: 89.99,
+        image: "/img/MODELO-1.jpg",
+        category: "mujer",
+        subcategory: "vestidos"
     },
     {
         id: 2,
-        name: "Polo",
-        description: "polo deportivo para actividades al aire libre",
-        stock: 10,
-        price: 20,
-        image: "/img/MODELO-2.jpg"
+        name: "Blusa Casual",
+        description: "Blusa casual cómoda para el día a día",
+        stock: 20,
+        price: 34.99,
+        image: "/img/MODELO-2.jpg",
+        category: "mujer",
+        subcategory: "blusas"
     },
-
     {
         id: 3,
-        name: "pantalon",
-        description: "pantalon deportivo para actividades al aire libre",
-        stock: 20,
-        price: 30,
-        image: "/img/MODELO-3.jpg"
+        name: "Pantalón Deportivo Mujer",
+        description: "Pantalón deportivo para actividades al aire libre",
+        stock: 18,
+        price: 59.99,
+        image: "/img/MODELO-3.jpg",
+        category: "mujer",
+        subcategory: "pantalones"
+    },
+    {
+        id: 4,
+        name: "Sudadera Mujer",
+        description: "Sudadera cómoda y abrigada",
+        stock: 12,
+        price: 44.99,
+        image: "/img/MODELO-4.jpg",
+        category: "mujer",
+        subcategory: "sudaderas"
+    },
+
+    // CATEGORÍA: HOMBRE
+    {
+        id: 5,
+        name: "Polo Deportivo",
+        description: "Polo deportivo para actividades al aire libre",
+        stock: 25,
+        price: 39.99,
+        image: "/img/MODELO-5.jpg",
+        category: "hombre",
+        subcategory: "camisetas"
+    },
+    {
+        id: 6,
+        name: "Pantalón Casual Hombre",
+        description: "Pantalón casual cómodo para el día a día",
+        stock: 16,
+        price: 59.99,
+        image: "/img/MODELO-6.jpg",
+        category: "hombre",
+        subcategory: "pantalones"
+    },
+    {
+        id: 7,
+        name: "Camisa Formal",
+        description: "Camisa formal para eventos especiales",
+        stock: 10,
+        price: 79.99,
+        image: "/img/MODELO-7.jpg",
+        category: "hombre",
+        subcategory: "camisas"
+    },
+    {
+        id: 8,
+        name: "Sudadera Hombre",
+        description: "Sudadera cómoda para el invierno",
+        stock: 14,
+        price: 49.99,
+        image: "/img/MODELO-8.jpg",
+        category: "hombre",
+        subcategory: "sudaderas"
+    },
+
+    // CATEGORÍA: NIÑOS
+    {
+        id: 9,
+        name: "Camiseta Niños",
+        description: "Camiseta colorida y cómoda para niños",
+        stock: 30,
+        price: 19.99,
+        image: "/img/MODELO-9.jpg",
+        category: "niños",
+        subcategory: "camisetas"
+    },
+    {
+        id: 10,
+        name: "Pantalón Niños",
+        description: "Pantalón resistente y cómodo para niños",
+        stock: 22,
+        price: 34.99,
+        image: "/img/MODELO-10.jpg",
+        category: "niños",
+        subcategory: "pantalones"
+    },
+    {
+        id: 11,
+        name: "Sudadera Niños",
+        description: "Sudadera suave y abrigada para niños",
+        stock: 18,
+        price: 39.99,
+        image: "/img/MODELO-11.jpg",
+        category: "niños",
+        subcategory: "sudaderas"
+    },
+    {
+        id: 12,
+        name: "Conjunto Niños",
+        description: "Conjunto de ropa deportiva para niños",
+        stock: 12,
+        price: 54.99,
+        image: "/img/MODELO-12.jpg",
+        category: "niños",
+        subcategory: "conjuntos"
     }
 ]
 
+// Obtener todos los productos
 const getProducts = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(products);
-        }, 3000)
-
+        }, 1000)
     })
-}  
+}
 
-export { getProducts }
+// Obtener productos por categoría
+const getProductsByCategory = (category) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const filtered = products.filter(product => product.category === category);
+            resolve(filtered);
+        }, 1000)
+    })
+}
+
+// Obtener productos por categoría y subcategoría
+const getProductsByCategoryAndSubcategory = (category, subcategory) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const filtered = products.filter(product => 
+                product.category === category && product.subcategory === subcategory
+            );
+            resolve(filtered);
+        }, 1000)
+    })
+}
+
+// Obtener todas las categorías disponibles
+const getCategories = () => {
+    const categories = new Set(products.map(product => product.category));
+    return Array.from(categories);
+}
+
+// Obtener subcategorías por categoría
+const getSubcategoriesByCategory = (category) => {
+    const subcategories = new Set(
+        products
+            .filter(product => product.category === category)
+            .map(product => product.subcategory)
+    );
+    return Array.from(subcategories);
+}
+
+export { 
+    getProducts, 
+    getProductsByCategory, 
+    getProductsByCategoryAndSubcategory,
+    getCategories,
+    getSubcategoriesByCategory
+}

@@ -9,7 +9,7 @@ const Item = ({product}) => {
       
       <div className="item-content">
         <p className="item-name">{product.name}</p>
-        <p className="item-stock">Precio: ${product.price} </p>
+        <p className="item-stock">Precio: S/ {product.price} </p>
 
       </div>
     </div>
