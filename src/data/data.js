@@ -6,7 +6,7 @@ const products = [
         description: "Vestido elegante para ocasiones especiales",
         stock: 15,
         price: 89.99,
-        image: "/img/MODELO-1.jpg",
+        image: "/image/vestido.webp",
         category: "mujer",
         subcategory: "vestidos"
     },
@@ -16,7 +16,7 @@ const products = [
         description: "Blusa casual cómoda para el día a día",
         stock: 20,
         price: 34.99,
-        image: "/img/MODELO-2.jpg",
+        image: "/image/blusa.webp",
         category: "mujer",
         subcategory: "blusas"
     },
@@ -26,7 +26,7 @@ const products = [
         description: "Pantalón deportivo para actividades al aire libre",
         stock: 18,
         price: 59.99,
-        image: "/img/MODELO-3.jpg",
+        image: "/image/pantalon.webp",
         category: "mujer",
         subcategory: "pantalones"
     },
@@ -36,7 +36,7 @@ const products = [
         description: "Sudadera cómoda y abrigada",
         stock: 12,
         price: 44.99,
-        image: "/img/MODELO-4.jpg",
+        image: "/image/sudadera.webp",
         category: "mujer",
         subcategory: "sudaderas"
     },
@@ -48,7 +48,7 @@ const products = [
         description: "Polo deportivo para actividades al aire libre",
         stock: 25,
         price: 39.99,
-        image: "/img/MODELO-5.jpg",
+        image: "/image/polodeportivo.webp",
         category: "hombre",
         subcategory: "camisetas"
     },
@@ -58,7 +58,7 @@ const products = [
         description: "Pantalón casual cómodo para el día a día",
         stock: 16,
         price: 59.99,
-        image: "/img/MODELO-6.jpg",
+        image: "/image/pantalonh.webp",
         category: "hombre",
         subcategory: "pantalones"
     },
@@ -68,7 +68,7 @@ const products = [
         description: "Camisa formal para eventos especiales",
         stock: 10,
         price: 79.99,
-        image: "/img/MODELO-7.jpg",
+        image: "/image/camisahom.webp",
         category: "hombre",
         subcategory: "camisas"
     },
@@ -78,7 +78,7 @@ const products = [
         description: "Sudadera cómoda para el invierno",
         stock: 14,
         price: 49.99,
-        image: "/img/MODELO-8.jpg",
+        image: "/image/sudaderahom.webp",
         category: "hombre",
         subcategory: "sudaderas"
     },
@@ -90,7 +90,7 @@ const products = [
         description: "Camiseta colorida y cómoda para niños",
         stock: 30,
         price: 19.99,
-        image: "/img/MODELO-9.jpg",
+        image: "/image/camisaniño.webp",
         category: "niños",
         subcategory: "camisetas"
     },
@@ -100,7 +100,7 @@ const products = [
         description: "Pantalón resistente y cómodo para niños",
         stock: 22,
         price: 34.99,
-        image: "/img/MODELO-10.jpg",
+        image: "/image/pantaloniño.webp",
         category: "niños",
         subcategory: "pantalones"
     },
@@ -110,7 +110,7 @@ const products = [
         description: "Sudadera suave y abrigada para niños",
         stock: 18,
         price: 39.99,
-        image: "/img/MODELO-11.jpg",
+        image: "/image/poleraniño.webp",
         category: "niños",
         subcategory: "sudaderas"
     },
@@ -120,7 +120,7 @@ const products = [
         description: "Conjunto de ropa deportiva para niños",
         stock: 12,
         price: 54.99,
-        image: "/img/MODELO-12.jpg",
+        image: "/image/conjuntoniño.webp",
         category: "niños",
         subcategory: "conjuntos"
     }

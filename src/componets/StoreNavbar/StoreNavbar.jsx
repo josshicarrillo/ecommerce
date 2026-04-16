@@ -10,7 +10,7 @@ const StoreNavbar = ({ cartCount, onGoHome, onOpenCart, selectedCategory, onCate
       <button className="brand-button" onClick={onGoHome}>
         <img src={logo} alt="Logo de la tienda" />
         <div>
-          <strong>CODERHAUSE SHOP</strong>
+          <strong>HELEN COLECTION</strong>
           <span>Tienda online</span>
         </div>
       </button>
