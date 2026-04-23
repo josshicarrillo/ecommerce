@@ -3,6 +3,7 @@ import "./store.css";
 import { 
   getProducts, 
   getProductsByCategory, 
+  getProductsOnSale,
   getProductsByCategoryAndSubcategory,
   getSubcategoriesByCategory 
 } from "./data/data";
@@ -27,7 +28,18 @@ function StoreApp() {
   useEffect(() => {
     setLoading(true);
     
-    if (selectedCategory && selectedSubcategory) {
+    if (selectedCategory === "ofertas") {
+      getProductsOnSale()
+        .then((data) => {
+          setProducts(data);
+        })
+        .catch((error) => {
+          console.error("Error al cargar productos:", error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    } else if (selectedCategory && selectedSubcategory) {
       getProductsByCategoryAndSubcategory(selectedCategory, selectedSubcategory)
         .then((data) => {
           setProducts(data);

@@ -25,7 +25,12 @@ const StoreNavbar = ({ cartCount, onGoHome, onOpenCart, selectedCategory, onCate
             {category.charAt(0).toUpperCase() + category.slice(1)}
           </button>
         ))}
-        <button className="nav-category-btn">Ofertas</button>
+        <button
+          className={`nav-category-btn ${selectedCategory === "ofertas" ? "active" : ""}`}
+          onClick={() => onCategoryClick("ofertas")}
+        >
+          Ofertas
+        </button>
       </nav>
 
       <button className="cart-button" onClick={onOpenCart}>

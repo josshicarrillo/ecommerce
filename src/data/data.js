@@ -8,7 +8,8 @@ const products = [
         price: 89.99,
         image: "/image/vestido.webp",
         category: "mujer",
-        subcategory: "vestidos"
+        subcategory: "vestidos",
+        liquidationDiscount: 30
     },
     {
         id: 2,
@@ -18,7 +19,8 @@ const products = [
         price: 34.99,
         image: "/image/blusa.webp",
         category: "mujer",
-        subcategory: "blusas"
+        subcategory: "blusas",
+        liquidationDiscount: 15
     },
     {
         id: 3,
@@ -28,7 +30,8 @@ const products = [
         price: 59.99,
         image: "/image/pantalon.webp",
         category: "mujer",
-        subcategory: "pantalones"
+        subcategory: "pantalones",
+        liquidationDiscount: 25
     },
     {
         id: 4,
@@ -38,7 +41,8 @@ const products = [
         price: 44.99,
         image: "/image/sudadera.webp",
         category: "mujer",
-        subcategory: "sudaderas"
+        subcategory: "sudaderas",
+        liquidationDiscount: 40
     },
 
     // CATEGORÍA: HOMBRE
@@ -80,7 +84,8 @@ const products = [
         price: 49.99,
         image: "/image/sudaderahom.webp",
         category: "hombre",
-        subcategory: "sudaderas"
+        subcategory: "sudaderas",
+        liquidationDiscount: 20
     },
 
     // CATEGORÍA: NIÑOS
@@ -145,6 +150,16 @@ const getProductsByCategory = (category) => {
     })
 }
 
+// Obtener productos en liquidaciÃ³n
+const getProductsOnSale = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const filtered = products.filter(product => product.liquidationDiscount);
+            resolve(filtered);
+        }, 1000)
+    })
+}
+
 // Obtener productos por categoría y subcategoría
 const getProductsByCategoryAndSubcategory = (category, subcategory) => {
     return new Promise((resolve, reject) => {
@@ -176,6 +191,7 @@ const getSubcategoriesByCategory = (category) => {
 export { 
     getProducts, 
     getProductsByCategory, 
+    getProductsOnSale,
     getProductsByCategoryAndSubcategory,
     getCategories,
     getSubcategoriesByCategory

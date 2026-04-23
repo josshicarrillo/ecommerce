@@ -4,6 +4,7 @@ const ProductCatalog = ({ loading, products, onSelectProduct, selectedCategory, 
   const categoryName = selectedCategory 
     ? selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)
     : "Todos los productos";
+  const isOffersView = selectedCategory === "ofertas";
 
   return (
     <section className="panel">
@@ -30,27 +31,48 @@ const ProductCatalog = ({ loading, products, onSelectProduct, selectedCategory, 
         </div>
       ) : (
         <div className="catalog-grid">
-          {products.map((product) => (
+          {products.map((product) => {
+            const finalPrice = product.liquidationDiscount
+              ? Number((product.price * (1 - product.liquidationDiscount / 100)).toFixed(2))
+              : product.price;
+
+            return (
             <article className="catalog-card" key={product.id}>
               <div className="catalog-card-image">
+                {product.liquidationDiscount && (
+                  <span className="discount-badge">-{product.liquidationDiscount}% liquidacion</span>
+                )}
                 <img src={product.image} alt={product.name} />
               </div>
 
               <div className="catalog-card-body">
                 <h3>{product.name}</h3>
                 <p>{product.description}</p>
+                {product.liquidationDiscount && (
+                  <p className="discount-text">
+                    Descuento por liquidacion: {product.liquidationDiscount}%
+                  </p>
+                )}
                 <small className="product-category">
                   {product.category} / {product.subcategory}
                 </small>
                 <div className="catalog-card-footer">
-                  <strong>S/ {product.price}</strong>
+                  {isOffersView && product.liquidationDiscount ? (
+                    <div className="catalog-price-block">
+                      <span className="catalog-old-price">S/ {product.price}</span>
+                      <strong>S/ {finalPrice}</strong>
+                    </div>
+                  ) : (
+                    <strong>S/ {product.price}</strong>
+                  )}
                   <button className="primary-button" onClick={() => onSelectProduct(product)}>
                     Ver detalle
                   </button>
                 </div>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       )}
     </section>

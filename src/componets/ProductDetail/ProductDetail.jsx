@@ -3,6 +3,9 @@ import "./productdetail.css";
 
 const ProductDetail = ({ product, onBack, onAddToCart, onGoToCart }) => {
   const [quantity, setQuantity] = useState(1);
+  const finalPrice = product.liquidationDiscount
+    ? Number((product.price * (1 - product.liquidationDiscount / 100)).toFixed(2))
+    : product.price;
 
   const handleIncrease = () => {
     setQuantity((prevQuantity) => Math.min(prevQuantity + 1, product.stock));
@@ -28,7 +31,19 @@ const ProductDetail = ({ product, onBack, onAddToCart, onGoToCart }) => {
           <h2>{product.name}</h2>
           <p className="detail-description">{product.description}</p>
           <p className="detail-meta">Stock disponible: {product.stock}</p>
-          <p className="detail-price">S/ {product.price}</p>
+          {product.liquidationDiscount && (
+            <p className="detail-discount">
+              Liquidacion activa: {product.liquidationDiscount}% de descuento
+            </p>
+          )}
+          {product.liquidationDiscount ? (
+            <div className="detail-price-group">
+              <p className="detail-old-price">S/ {product.price}</p>
+              <p className="detail-price">S/ {finalPrice}</p>
+            </div>
+          ) : (
+            <p className="detail-price">S/ {product.price}</p>
+          )}
 
           <div className="detail-quantity">
             <span>Cantidad</span>

@@ -34,6 +34,7 @@
 .detail-content h2,
 .detail-description,
 .detail-meta,
+.detail-discount,
 .detail-price {
   margin: 0;
 }
@@ -45,6 +46,24 @@
 .detail-description,
 .detail-meta {
   color: #efdcc6;
+}
+
+.detail-discount {
+  color: #ef8354;
+  font-weight: 700;
+}
+
+.detail-price-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-old-price {
+  margin: 0;
+  color: #c7ae96;
+  font-size: 1rem;
+  text-decoration: line-through;
 }
 
 .detail-price {
