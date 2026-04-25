@@ -2,19 +2,24 @@ import { getProducts } from "../../data/data.js"
 import { useState, useEffect } from "react"
 import Itemlist from "../ItemList/ItemList"
 import "./itemlistcontainer.css"
+import { collection, getDoc } from "firebase/firestore"
+import db from "../../db/db.js"
 
 const ItemListContainer = ({ saludo }) => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   
-  
- useEffect(() => {
-    getProducts()
-      .then((data) => {
-        setProducts(data)
-        })
+  const getProducts = async() => {
+    try {
+      
+    } catch (error) {
+      
+    }
+  }
 
-        .catch((error) => { console.log(error) }) 
+ useEffect(() => {
+   
+     
         
   }, [])
 
