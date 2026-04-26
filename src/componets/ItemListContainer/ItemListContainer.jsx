@@ -4,6 +4,7 @@ import Itemlist from "../ItemList/ItemList"
 import "./itemlistcontainer.css"
 import { collection, getDoc } from "firebase/firestore"
 import db from "../../db/db.js"
+import { useParams } from "react-router"
 
 const ItemListContainer = ({ saludo }) => {
   const [products, setProducts] = useState([])
@@ -11,14 +12,20 @@ const ItemListContainer = ({ saludo }) => {
   
   const getProducts = async() => {
     try {
+      const productsRef = collection(db, "products")
+      const dataDb = await getDocs(productsRef)
+      const data = dataDb.docs.map((productsDb) => {
+        return {id: productDb.id }
+      })
+        
       
     } catch (error) {
-      
+      console.log (error)
     }
   }
 
  useEffect(() => {
-   
+   getProducts()
      
         
   }, [])
